@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "float-hud"
+version = "1.0.0"
+description = "常驻桌面的极简系统监控悬浮条：CPU / 内存 / 磁盘 / 网络 / 温度 + 占用最高进程"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+keywords = ["monitor", "hud", "overlay", "psutil", "pyside6", "windows", "desktop-widget"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Win32 (MS Windows)",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: System :: Monitoring",
+    "Topic :: Desktop Environment",
+]
+dependencies = [
+    "psutil>=5.9",
+    "PySide6-Essentials>=6.6",
+]
+
+[project.optional-dependencies]
+shortcut = ["pywin32>=306"]
+
+[project.gui-scripts]
+float-hud = "float_hud:run"
+
+[tool.setuptools]
+py-modules = ["float_hud"]

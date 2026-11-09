@@ -1,0 +1,16 @@
+# 统一换行，避免跨平台 clone 破坏可执行脚本
+* text=auto eol=lf
+
+# 关键：cmd 解析 .bat 时，LF 换行会让 `if exist` 被截断成 `xist`，
+# 导致所有分支静默失效。必须强制 CRLF。
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制
+*.ico binary
+*.png binary
+*.jpg binary
+*.exe binary
+
+# 图标/图片不做 diff
+docs/*.png binary
