@@ -24,3 +24,11 @@ _c_*.png
 _p_*.png
 _t*.png
 _final*.png
+_verify.png
+_exe_shot.png
+_diag*.txt
+_check*.txt
+_temp*.txt
+_diag*.py
+_check*.py
+_temp*.py

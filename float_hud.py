@@ -47,7 +47,21 @@ from PySide6.QtNetwork import QLocalServer, QLocalSocket
 from PySide6.QtWidgets import QApplication, QMenu, QSystemTrayIcon, QWidget
 
 APP_NAME = "悬浮监控栏"
-APP_DIR = Path(__file__).resolve().parent
+
+
+def _app_dir() -> Path:
+    """配置和日志放在哪。
+
+    源码运行时 = 脚本所在目录；PyInstaller 打包后 __file__ 指向
+    C:\\Users\\...\\Temp\\_MEIxxxx 这种临时解包目录，退出即被删除——
+    写在那里的配置等于没存。因此打包环境下改用 exe 自身所在目录。
+    """
+    if getattr(sys, "frozen", False):
+        return Path(sys.executable).resolve().parent
+    return Path(__file__).resolve().parent
+
+
+APP_DIR = _app_dir()
 CONF_PATH = APP_DIR / "config.json"
 LOG_PATH = APP_DIR / "error.log"
 SERVER_NAME = "FloatHUD-SingleInstance"
