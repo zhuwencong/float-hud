@@ -4,13 +4,9 @@
 
 纯 `QPainter` 手绘，无边框、半透明、可拖动吸附；空闲时零 CPU 占用。
 
-<p align="center">
-  <img src="docs/preview-dark.png" width="742" alt="深色主题">
-</p>
+![深色主题](docs/preview-dark.png)
 
-<p align="center">
-  <img src="docs/preview-light.png" width="742" alt="浅色主题">
-</p>
+![浅色主题](docs/preview-light.png)
 
 ## 界面构成
 
